@@ -8,14 +8,27 @@
 }
 
 @media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
+  .fas.fa-arrow-down {
+    -webkit-animation: action 1s infinite  alternate;
+    animation: action 1s infinite  alternate;
+    /*animation: App-logo-spin infinite 20s linear;*/
   }
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.App-body {
+  background-color: #171c25;
+  min-height: 95vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-bottom {
+  background-color: #171c25;
+  min-height: 5vh;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -35,4 +48,84 @@
   to {
     transform: rotate(360deg);
   }
+}
+
+@-webkit-keyframes action {
+  0% { transform: translateY(0); }
+  100% { transform: translateY(-10px); }
+}
+@keyframes action {
+  0% { transform: translateY(0); }
+  100% { transform: translateY(-10px); }
+}
+
+.portrait {
+  height: 100px;
+  width: 100px;
+  border: 1px solid white;
+  border-radius: 100px;
+  margin: 12px;
+}
+.portraitTemp {
+  height: 30px;
+  width: 30px;
+  border: 1px solid white;
+  border-radius: 100px;
+  margin: 12px;
+}
+
+.InfoBox {
+  width:100%;
+  /*border: 1px dotted red;*/
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.nameDisplay {
+  /*border: 1px dotted red;*/
+  min-width: 200px;
+}
+
+.contentContainer {
+  /*border: 1px dotted green*/
+}
+
+.socialLinks > * {
+  margin-right: 16px;
+  margin-left: 16px;
+}
+
+.socialLinks {
+  margin-top: 12px;
+}
+
+.subCat {
+  margin-top: 12px;
+  font-size: 16px;
+}
+
+a:link {
+  color: #ffffff;
+  background-color: transparent;
+  text-decoration: none;
+}
+
+a:visited {
+  color: #ffffff;
+  background-color: transparent;
+  text-decoration: none;
+}
+
+a:hover {
+  color: #ffffff;
+  background-color: transparent;
+  text-decoration: underline;
+}
+
+a:active {
+  color: #ffffff;
+  background-color: transparent;
+  text-decoration: underline;
 }
