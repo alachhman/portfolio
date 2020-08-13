@@ -1,5 +1,9 @@
 .App {
   text-align: center;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  height: 100vh;
 }
 
 .App-logo {
@@ -15,9 +19,36 @@
   }
 }
 
+.App-header {
+  background-color: #171c25;
+  min-height: 10vh;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  font-size: calc(4px + 2vmin);
+  color: white;
+}
+
+.headerLinks > * {
+  margin-right: 18px;
+  text-decoration: none;
+  border: 1px solid white;
+  padding: 4px;
+  border-radius: 5%;
+}
+
+.logo {
+  border: 1px solid white;
+  border-radius: 100%;
+  height: 50px;
+  width: 50px;
+  margin-left: 16px;
+}
+
 .App-body {
   background-color: #171c25;
-  min-height: 95vh;
+  min-height: 70vh;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -28,13 +59,27 @@
 
 .App-bottom {
   background-color: #171c25;
-  min-height: 5vh;
+  min-height: 20vh;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   font-size: calc(10px + 2vmin);
   color: white;
+}
+
+.Content-body {
+  min-height: 100vh;
+  background-color: #171c25;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.Content-category {
+  width: 88%;
 }
 
 .App-link {
@@ -59,23 +104,28 @@
   100% { transform: translateY(-10px); }
 }
 
-.portrait {
-  height: 100px;
-  width: 100px;
-  border: 1px solid white;
-  border-radius: 100px;
-  margin: 12px;
+.dot {
+  height: 1vmin;
+  width: 1vmin;
+  background-color: white;
+  border-radius: 50%;
+  display: inline-block;
+  margin-bottom: 5px;
+  /*border: 1px solid white;*/
+  /*margin-top: 4px;*/
+  /*margin-bottom: 4px;*/
 }
-.portraitTemp {
-  height: 30px;
-  width: 30px;
+
+.portrait {
+  height: 150px;
+  width: 150px;
   border: 1px solid white;
   border-radius: 100px;
   margin: 12px;
 }
 
 .InfoBox {
-  width:100%;
+  width: 100%;
   /*border: 1px dotted red;*/
   display: flex;
   align-items: center;
@@ -95,37 +145,65 @@
 .socialLinks > * {
   margin-right: 16px;
   margin-left: 16px;
+  width: 25px;
+  /*border: 1px dotted red;*/
 }
 
 .socialLinks {
   margin-top: 12px;
+  /*border: 1px dotted green*/
 }
 
-.subCat {
-  margin-top: 12px;
-  font-size: 16px;
+.arrowPrompt > * {
+  /*border: 1px solid red;*/
+  width: 25px
 }
 
-a:link {
-  color: #ffffff;
+h1, h2, h3, h4, h5 {
+  color: white !important;
+}
+
+a, AnchorLink, button:link {
+  color: #ffffff !important;
   background-color: transparent;
-  text-decoration: none;
 }
 
-a:visited {
-  color: #ffffff;
+a, AnchorLink, button:visited {
+  color: #ffffff !important;
   background-color: transparent;
-  text-decoration: none;
 }
 
-a:hover {
-  color: #ffffff;
+a, AnchorLink, button:hover {
+  color: #357ea7 !important;
   background-color: transparent;
-  text-decoration: underline;
+  transition: 0.3s;
 }
 
-a:active {
-  color: #ffffff;
+a, AnchorLink, button:active {
+  color: #ffffff !important;
   background-color: transparent;
-  text-decoration: underline;
 }
+
+.arrowBuffer {
+  border: 1px dotted red
+}
+
+.hvr-float {
+  display: inline-block;
+  vertical-align: middle;
+  -webkit-transform: perspective(1px) translateZ(0);
+  transform: perspective(1px) translateZ(0);
+  box-shadow: 0 0 1px rgba(0, 0, 0, 0);
+  -webkit-transition-duration: 0.3s;
+  transition-duration: 0.3s;
+  -webkit-transition-property: transform;
+  transition-property: transform;
+  -webkit-transition-timing-function: ease-out;
+  transition-timing-function: ease-out;
+}
+
+.hvr-float:hover, .hvr-float:focus, .hvr-float:active {
+  -webkit-transform: translateY(-8px);
+  transform: translateY(-8px);
+}
+
