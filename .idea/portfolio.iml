@@ -7,5 +7,6 @@
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
     <orderEntry type="library" name="c0b682a4e2" level="application" />
+    <orderEntry type="library" name="devicon" level="application" />
   </component>
 </module>

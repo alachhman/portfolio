@@ -143,6 +143,18 @@
   /*border: 1px dotted green*/
 }
 
+.languageBlocks > * {
+  border: 1px solid white;
+  border-radius: 15%;
+  width: 50px;
+  font-size: 80px;
+  margin-right: 8px;
+}
+
+.languageBlocks {
+  margin-bottom: 8px;
+}
+
 .socialLinks > * {
   margin-right: 16px;
   margin-left: 16px;

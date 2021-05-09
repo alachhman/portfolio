@@ -32,10 +32,10 @@ const projects = [
 
 function Header() {
     return (
-        <div className={"App-header"}>
+        <div className={"App-header"} id={"header"}>
             <img className={"logo"} src={Logo} alt={"Logo"}/>
             <div className={"headerLinks"}>
-                <AnchorLink href='#things' className={"hvr-float"}>About</AnchorLink>
+                <AnchorLink href='#about' className={"hvr-float"}>About</AnchorLink>
                 <AnchorLink href='#experience' className={"hvr-float"}>Experience</AnchorLink>
                 <AnchorLink href='#projects' className={"hvr-float"}>Projects</AnchorLink>
             </div>
@@ -70,7 +70,7 @@ function AtfContent() {
     )
 }
 
-function SectionName (props) {
+function SectionName(props) {
     return (
         <Fade>
             <h2>{props.title}</h2>
@@ -79,15 +79,43 @@ function SectionName (props) {
     )
 }
 
-function ExperienceSection () {
+function AboutSection() {
     return (
-        <div className={"Content-category"} id={"experience"}>
-            <SectionName title={"Experience"}/>
+        <div className={"Content-category"} id={"about"}>
+            <SectionName title={"About"}/>
         </div>
     )
 }
 
-function ProjectLink (props) {
+function LanguageBlocks() {
+    return (
+        <div>
+            <div className={"languageBlocks"}>
+                <i className="devicon-java-plain-wordmark"/>
+                <i className="devicon-nodejs-plain"/>
+                <i className="devicon-go-line"/>
+            </div>
+            <div className={"languageBlocks"}>
+                <i className="devicon-flutter-plain"/>
+                <i className="devicon-cucumber-plain-wordmark"/>
+                <i className="devicon-csharp-line"/>
+
+            </div>
+        </div>
+
+    )
+}
+
+function ExperienceSection() {
+    return (
+        <div className={"Content-category"} id={"experience"}>
+            <SectionName title={"Experience"}/>
+            <LanguageBlocks/>
+        </div>
+    )
+}
+
+function ProjectLink(props) {
     let link = props.link;
     return (
         <a href={link.url} className={"hvr-float"}>
@@ -96,25 +124,26 @@ function ProjectLink (props) {
     )
 }
 
-function Project (props) {
+function Project(props) {
     let project = props.project;
     return (
         <Fade>
-            <Row style={{textAlign: "left", border: "1px dotted red"}}>
+            <Row style={{textAlign: "left"}}>
                 <div style={{borderRadius: "25px", padding: "3px"}}>
                     {project.title}
+                    <div className={"socialLinks"}>
+                        |{project.links.map(x => <ProjectLink link={x}/>)} |
+                    </div>
                 </div>
             </Row>
-            <Row style={{marginBottom: "32px", border: "1px dotted red"}}>
-                <Col xs={24} sm={24} md={24} lg={16} xl={16} style={{textAlign: "left", fontSize: "16px", padding: "16px", border: "1px dotted green"}}>
+            <Row style={{marginBottom: "32px"}}>
+                <Col xs={24} sm={24} md={24} lg={16} xl={16}
+                     style={{textAlign: "left", fontSize: "16px", padding: "8px"}}>
                     {project.desc}
-                    <div className={"socialLinks"} style={{width: "50%", margin: "0 auto", display: "flex", justifyContent:"center", padding: "16px"}}>
-                        {project.links.map(x => {<ProjectLink link={x}/>})}
-                    </div>
                 </Col>
-                <Col xs={24} sm={24} md={24} lg={8} xl={8} style={{border: "1px dotted yellow"}} >
-                    <input src={"https://i.imgur.com/B64INWt.png"} alt={"slimeRL1"}
-                           style={{maxWidth: "300px", border: "1px solid white"}}
+                <Col xs={24} sm={24} md={24} lg={8} xl={8}>
+                    <input src={project.imageUrl} alt={"alt"}
+                           style={{maxWidth: "275px", border: "1px solid white"}}
                            className={"hvr-float"} type={"image"}/>
                 </Col>
             </Row>
@@ -123,7 +152,7 @@ function Project (props) {
     )
 }
 
-function ProjectsSection () {
+function ProjectsSection() {
     return (
         <div className={"Content-category"} id={"projects"}>
             <SectionName title={"Projects"}/>
@@ -136,16 +165,21 @@ function BtfContent() {
     return (
         <div className={"Content-body"}>
             {/*Website Under Construction*/}
-            <div>
+            <div style={{marginBottom: "64px"}}>
+                <AboutSection/>
                 <ExperienceSection/>
                 <ProjectsSection/>
+                <AnchorLink href='#header' className={"hvr-float"}
+                            style={{border: "1px solid white", padding: "4px", borderRadius: "5%"}}>
+                    ↑ Back to the Top ↑
+                </AnchorLink>
             </div>
         </div>
     )
 }
 
-function BottomArrow(){
-    return(
+function BottomArrow() {
+    return (
         <div className={"arrowPrompt"}>
             <i className="fas fa-arrow-down"/>
         </div>
